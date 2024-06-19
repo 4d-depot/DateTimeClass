@@ -1,0 +1,202 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Arial-BoldMT;\f1\fswiss\fcharset0 ArialMT;\f2\fswiss\fcharset0 Arial-ItalicMT;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;
+\red66\green1\blue120;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgray\c0\c0;\cssrgb\c1680\c19835\c100000;
+\cssrgb\c33333\c10196\c54510;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww22980\viewh20700\viewkind1
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs26 \cf2 \cb3 Nouvelle classe
+\f1\b0 \
+
+\f0\b \cf4 Q : Date ou DateTime ?
+\f1\b0 \cf2 \
+\
+
+\f0\b Constructeur\
+
+\f1\b0 \
+Constructeur JS :\
+\
+DateTime.new() // date du jour par d\'e9faut\
+\
+DateTime.new(num)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\i \cf2 num = nombre de ms depuis le 1er janvier 1970\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\i0 \cf2 \
+DateTime.new("March 23,2023 17:18:19")  // ISO 8601\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\i \cf2 remarque : d\'e9conseill\'e9 car par support\'e9 par tous les navigateur semble-t-il.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\i0 \cf2 \
+DateTime.new(2023;0\{;1\{;20\{;15\{;30\{;000\}\}\}\}\}) // Y;m;d;h;mn;ss;ms\
+\cf4 Q :\
+- en JS le mois compris entre 0 et 11, est-ce qu'on fait pareil ou est-ce qu'on prend 1-12 ?\
+- Le jour est optionnel\'85 par d\'e9faut "1" pourquoi pas le mois optionnel aussi ? par d\'e9faut 0 (janvier)\cf2 \
+\
+Constructeur 4D (en plus des trois autres)\
+\
+DateTime.new("12/03/2024 15:20:30";"dd/MM/yyyy hh:mm:ss")\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\i \cf2 (avec la deuxi\'e8me string = descriptif (ICU) de la 1ere string)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\i0 \cf2 \
+\
+
+\f0\b Getters (JS)\
+
+\f1\b0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj\partightenfactor0
+\ls1\ilvl0\cf2 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getDay() renvoie le jour de la semaine sous forme de chiffre (avec 0 pour dimanche, 1 pour lundi et 6 pour samedi) pour la date sp\'e9cifi\'e9e selon l\'92heure locale ;\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getDate() renvoie le jour du mois en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure locale ;\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getMonth() renvoie le num\'e9ro du mois de l\'92ann\'e9e (avec 0 pour janvier, 1 pour f\'e9vrier, 11 pour d\'e9cembre) pour la date sp\'e9cifi\'e9e selon l\'92heure locale ;\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getFullYear() renvoie l\'92ann\'e9e en 4 chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure locale ;\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getHours() renvoie l\'92heure en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure locale ;\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getMinutes() renvoie les minutes en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure locale ;\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getSeconds() renvoie les secondes en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure locale ;\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getMilliseconds() renvoie les millisecondes en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure locale.\kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 \
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj\partightenfactor0
+\ls2\ilvl0\cf2 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getUTCDay() renvoie le jour de la semaine sous forme de chiffre (avec 0 pour dimanche, 1 pour lundi et 6 pour samedi) pour la date sp\'e9cifi\'e9e selon l\'92heure UTC ;\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getUTCDate() renvoie le jour du mois en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure UTC ;\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getUTCMonth() renvoie le num\'e9ro du mois de l\'92ann\'e9e (avec 0 pour janvier, 1 pour f\'e9vrier, 11 pour d\'e9cembre) pour la date sp\'e9cifi\'e9e selon l\'92heure UTC ;\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getUTCFullYear() renvoie l\'92ann\'e9e en 4 chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure UTC ;\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getUTCHours() renvoie l\'92heure en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure UTC ;\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getUTCMinutes() renvoie les minutes en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure UTC ;\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getUTCSeconds() renvoie les secondes en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure UTC ;\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+getUTCMilliseconds() renvoie les millisecondes en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure UTC.\
+\pard\tx566\pardeftab720\qj\partightenfactor0
+\cf2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf2 \kerning1\expnd0\expndtw0 Setters (JS)\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj\partightenfactor0
+\ls3\ilvl0
+\f1\b0 \cf2 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+setDate() et setUTCDate() d\'e9finissent le jour du mois en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure locale ou l\'92heure UTC ;\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+setMonth() et setUTCMonth() d\'e9finissent le num\'e9ro du mois de l\'92ann\'e9e (avec 0 pour janvier, 1 pour f\'e9vrier, 11 pour d\'e9cembre) pour la date sp\'e9cifi\'e9e selon l\'92heure locale ou l\'92heure UTC ;\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+setFullYear() et setUTCFullYear() d\'e9finissent l\'92ann\'e9e en 4 chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure locale ou l\'92heure UTC ;\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+setHours() et setUTCHours () d\'e9finissent l\'92heure en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure locale ou l\'92heure UTC ;\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+setMinutes() et setUTCMinutes() d\'e9finissent les minutes en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure locale ou l\'92heure UTC ;\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+setSeconds() et setUTCSeconds() d\'e9finissent les secondes en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure locale ou l\'92heure UTC ;\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+setMilliseconds() et setUTCMilliseconds() d\'e9finissent les millisecondes en chiffres pour la date sp\'e9cifi\'e9e selon l\'92heure locale ou l\'92heure UTC.\
+\pard\tx566\pardeftab720\qj\partightenfactor0
+\cf2 \
+\pard\tx566\pardeftab720\qj\partightenfactor0
+
+\f0\b \cf2 Conversions\
+\pard\tx566\pardeftab720\qj\partightenfactor0
+
+\f1\b0 \cf2 \
+- toString() -> "Wed Jul 28 1993 14:39:07 GMT+0200 (CEST)"\
+- toDateString() -> "Wed Jul 28 1993"\
+- toISOString() -> "2011-10-05T14:48:00.000Z"\
+- toJSON(); ->  "1975-08-19T23:15:30.000Z"\
+- toUTCString() -> "Tue, 19 Aug 1975 23:15:30 GMT"\
+\
+\pard\pardeftab720\sa480\qj\partightenfactor0
+\cf2 - toLocaleDateString() renvoie la partie \'ab jour-mois-ann\'e9e \'bb d\'92une date, format\'e9e en fonction d\'92une locale et d\'92options.\
+- toLocaleTimeString() renvoie la partie \'ab heures-minutes-secondes \'bb d\'92une date, format\'e9e en fonction d\'92une locale et d\'92options.\
+- toLocaleString() renvoie la date compl\'e8te, format\'e9e en fonction d\'92une locale et d\'92options.\
+pour ces trois cas, en 
+\f0\b JS
+\f1\b0  on passe un objet en param\'e8tre pour d\'e9finir le format souhait\'e9\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj\partightenfactor0
+\ls4\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+weekday qui repr\'e9sente le jour de la semaine. Les valeurs possibles sont \'ab\'a0narrow\'a0\'bb, \'ab\'a0short\'a0\'bb et \'ab\'a0long\'a0\'bb ;\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+day qui repr\'e9sente le jour du mois. Les valeurs possibles sont numeric et 2-digit ;\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+month qui repr\'e9sente le mois. Les valeurs possibles sont numeric et 2-digit ;\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+year qui repr\'e9sente l\'92ann\'e9e. Les valeurs possibles sont numeric et 2-digit ;\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+hour qui repr\'e9sente l\'92heure. Les valeurs possibles sont numeric et 2-digit ;\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+minute qui repr\'e9sente les minutes. Les valeurs possibles sont numeric et 2-digit ;\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+second qui repr\'e9sente les secondes. Les valeur possibles sont numeric et 2-digit.\
+\pard\pardeftab720\sa480\qj\partightenfactor0
+\cf2 \
+En 
+\f0\b 4D
+\f1\b0  on pourrait supporter en sortie (Q : en plus ? / \'e0 la place ?) la m\'eame chaine 
+\f0\b ICU
+\f1\b0  que pour la fonction String\
+
+\f0\b Date parsing
+\f1\b0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf2 \kerning1\expnd0\expndtw0 JS 
+\f1\b0 : Date.parse('01 Jan 1970 00:00:00 GMT');\
+\
+
+\f0\b 4D
+\f1\b0  : $DateTime.parse("01 Jan 1970 00:00:00 GMT");\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\i \cf2 ou
+\f1\i0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf2 4D
+\f1\b0  : $DateTime.parse("12/03/2024 15:20:30";"dd/MM/yyyy hh:mm:ss")\
+\
+\
+\pard\pardeftab720\sa640\partightenfactor0
+
+\f0\b \cf2 \expnd0\expndtw0\kerning0
+Divers: \
+DateTime.valueOf()
+\f1\b0  renvoie la valeur primitive d'un objet {\field{\*\fldinst{HYPERLINK "https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Date"}}{\fldrslt \ul \ulc5 Date}}.  (en ms depuis 01/01/1970)\
+\
+\kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa480\qj\partightenfactor0
+\cf2 \expnd0\expndtw0\kerning0
+\
+\
+\
+15*3600 + 40*60 + 35\
+54000 + 2400 + 35 = 56435\
+\
+}
