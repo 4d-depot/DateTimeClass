@@ -1,19 +1,47 @@
-# Data folder
-[dD][aA][tT][aA]/
-
-# Derived data
-DerivedData/
-
-# Libraries
-Libraries/
-
-# User preferences
-userPreferences.*/
-
-# Uncomment (remove the following # ) to ignore Trash
-# Project/Trash
-
-# System files
+#--------------------------------
+# Ignore invisible files/folders
+#--------------------------------
+.*
+!.git*
+.git/
 .DS_Store
+
+#--------------------------------
+# Ignore data file
+#--------------------------------
+#[dD][aA][tT][aA]/
+*.journal
+*.4DIndx
+*.Match
+
+#--------------------------------
+# Ignore derived data
+#--------------------------------
+Project/DerivedData/
+
+#--------------------------------
+# Ignore logs
+#--------------------------------
+Logs/
+
+#--------------------------------
+# Ignore settings & preferences
+#--------------------------------
+userPreferences.*/
+Settings/
+#!buildApp.4DSettings
+
+#--------------------------------
+# Miscellaneous
+#--------------------------------
+*__Orphan__*
+*symbols.txt
 ehthumbs.db
 Thumbs.db
+
+#--------------------------------
+# Added by user
+#--------------------------------
+Resources/php.ini
+Project/Trash/
+Classe DateTime 4D.rtf
