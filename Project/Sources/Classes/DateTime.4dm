@@ -10,6 +10,11 @@ Class constructor( ... )
 			
 		: (Count parameters:C259=1)
 			Case of 
+				: (Value type:C1509($1)=Is text:K8:3) && (Match regex:C1019("\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z"; $1; 1))  //"YYYY-MM-DDThh:mm:ss.nnnZ"
+					This:C1470.date:=Add to date:C393(!00-00-00!; Num:C11(Substring:C12($1; 1; 4)); Num:C11(Substring:C12($1; 6; 2)); Num:C11(Substring:C12($1; 9; 2)))
+					This:C1470.time:=Time:C179(Substring:C12($1; 12; 8))
+					This:C1470.milliseconds:=Num:C11(Substring:C12($1; 21; 3))
+
 				: (Value type:C1509($1)=Is date:K8:7)  // date, no time, no ms
 					
 					This:C1470.date:=$1
