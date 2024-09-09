@@ -7,6 +7,8 @@ var $delta : Object
 
 $dateTime:=cs:C1710.DateTime.new()  // current date + time + ms
 
+
+
 $dateTime:=cs:C1710.DateTime.new(!2001-02-03!)  //only date no time, no ms
 $dateTime:=cs:C1710.DateTime.new(!2001-02-03!; ?15:30:45?)  // date + time
 $dateTime:=cs:C1710.DateTime.new(!2001-02-03!; ?15:30:45?; 456)  // date + time + ms

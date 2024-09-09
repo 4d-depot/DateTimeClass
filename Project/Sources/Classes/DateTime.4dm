@@ -3,10 +3,12 @@ Class constructor( ... )
 	
 	Case of 
 		: (Count parameters:C259=0)  // current date
+			var $ts : Text
+			$ts:=Timestamp:C1445
 			
-			This:C1470.date:=Current date:C33
-			This:C1470.time:=Current time:C178
-			This:C1470.milliseconds:=0
+			This:C1470.date:=Date:C102($ts)
+			This:C1470.time:=Time:C179($ts)
+			This:C1470.milliseconds:=Num:C11(Substring:C12($ts; 21; 3))
 			
 		: (Count parameters:C259=1)
 			Case of 
@@ -82,7 +84,7 @@ Class constructor( ... )
 			End case 
 	End case 
 	
-	
+	This:C1470.gmt:=This:C1470.__calcGMT()
 	
 Function get year()->$year : Integer  // day of month
 	If (Not:C34(Undefined:C82(This:C1470.date)))
@@ -129,6 +131,13 @@ Function get monthName()->$monthName : Text  // day of week
 	If (Not:C34(Undefined:C82(This:C1470.date)))
 		$monthName:=String:C10(This:C1470.date; "MMMM")
 	End if 
+	
+	
+Function __calcGMT()->$gmt : Real
+	
+	$gmt:=This:C1470.time-Time:C179(Substring:C12(Timestamp:C1445; 12; 8))  // difference in seconds
+	$gmt:=Round:C94($gmt/900; 0)  // difference in quarters of an hour rounded)
+	$gmt:=Round:C94($gmt/4; 2)  //0,25 to 23,45
 	
 Function __splitDuration($duration : Real)->$split : Object
 	
