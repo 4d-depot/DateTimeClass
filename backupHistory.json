@@ -1,0 +1,29 @@
+{
+	"Macintosh_HD:Users:rolandlannuzel:Documents:Github:POC:DateTimeClass:Project:DateTimeClass.4DProject": [
+		{
+			"backupPath": "Macintosh_HD:Users:rolandlannuzel:Documents:Github:POC:DateTimeClass:data[0001].4BK",
+			"structurePath": "Macintosh_HD:Users:rolandlannuzel:Documents:Github:POC:DateTimeClass:Project:DateTimeClass.4DProject",
+			"dataPath": "Macintosh_HD:Users:rolandlannuzel:Documents:Github:POC:DateTimeClass:Data:data.4DD",
+			"logPath": "",
+			"startingDate": "2024-09-25T12:56:43.244Z",
+			"endingDate": "2024-09-25T12:56:43.244Z",
+			"scheduledDate": "2024-09-25T12:56:43.244Z",
+			"backupNumber": 1,
+			"duration": 48,
+			"attachments": [
+				{
+					"attachmentPath": "Macintosh_HD:Users:rolandlannuzel:Documents:Github:POC:DateTimeClass:Data:data.4DSyncHeader",
+					"found": false
+				},
+				{
+					"attachmentPath": "Macintosh_HD:Users:rolandlannuzel:Documents:Github:POC:DateTimeClass:Data:data.4DSyncData",
+					"found": false
+				},
+				{
+					"attachmentPath": "Macintosh_HD:Users:rolandlannuzel:Documents:Github:POC:DateTimeClass:Data:data.4DIndx",
+					"found": false
+				}
+			]
+		}
+	]
+}

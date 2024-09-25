@@ -226,6 +226,12 @@ Function addDate($years : Integer; $months : Integer; $days : Integer; $duration
 	
 	This:C1470.date:=Add to date:C393(This:C1470.date; $years; $months; $days)
 	
+Function get weekNumber()->$weekNumber : Integer
+	
+	$weekNumber:=(Num:C11(String:C10(This:C1470.date; "w")))
+	
+	
+	
 	
 	
 	
